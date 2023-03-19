@@ -21,6 +21,7 @@
 
 .btn {
     padding: 10px 30px;
+    color: var(--main);
     border: none;
     outline: none;
     border-radius: 4px;
@@ -57,4 +58,17 @@
 }
 .btn-outline:hover::before {
     width: 100%;
+}
+
+/* removing arrows from input numbers */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  --moz-appearance: textfield;
 }
