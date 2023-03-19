@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+::selection {
+    background-color: var(--green);
+}
+:root {
+    --dark-green: #243119;
+    --green: #629460;
+    --olivine: #96be8c;
+    --light-green: #aceca1;
+    --tea: #c9f2c7;
+    --main: #fff;
+    --secondary: #ddd;
+}
+
+
+.btn {
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--green);
+    transition: all .2s;
+}
+.btn:hover {
+    background-color: var(--olivine);
+}
+.btn-outline {
+    padding: 10px 30px;
+    border: solid 2px var(--green);
+    color: var(--green);
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+}
+.btn-outline::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--green);
+    z-index: -1;
+    transition: all .3s;
+}
+.btn-outline:hover {
+    color: var(--main);
+}
+.btn-outline:hover::before {
+    width: 100%;
+}
