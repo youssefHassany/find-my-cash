@@ -15,9 +15,11 @@
     --light-green: #aceca1;
     --tea: #c9f2c7;
     --main: #fff;
-    --secondary: #ddd;
+    --secondary: #ccc;
 }
-
+body {
+    overflow: hidden;
+}
 
 .btn {
     padding: 10px 30px;
@@ -31,6 +33,7 @@
 }
 .btn:hover {
     background-color: var(--olivine);
+    color: #222;
 }
 .btn-outline {
     padding: 10px 30px;
