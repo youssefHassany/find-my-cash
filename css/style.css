@@ -15,12 +15,14 @@ input[type="number"] {
 }
 .start-cash {
     box-sizing: border-box;
-    width: 80%;
+    width: 40%;
     margin: 40px auto;
     padding: 20px;
     border-radius: 4px;
     background-color: var(--secondary);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
+

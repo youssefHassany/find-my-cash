@@ -1,0 +1,11 @@
+@media (max-width: 755px) {
+    .start-cash {
+        width: 80%;
+    }
+}
+
+@media (max-width: 355px) {
+    .start-cash {
+        width: 100%;
+    }
+}
