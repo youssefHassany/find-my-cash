@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/myFramework.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
     <nav>
@@ -19,9 +20,10 @@
         <a href="index.html">Home</a>
         <a href="#">Analytics</a>
         <a href="#">Wanna use it offline?</a>
+        <a href="https://github.com/youssefHassany/find-my-cash" target="_blank">GitHub</a>
     </div>
 
-    <div class="start-cash">
+    <div class="start-cash wow fadeInUp" data-wow-duration="1s">
         <div>
             <label for="my-cash">Enter your money: </label>
             <input type="number" name="" id="my-cash">
@@ -29,11 +31,26 @@
         <input type="submit" value="Enter" class="btn">
     </div>
 
-    <div class="purchases">
+    <div class="purchases wow fadeInUp" data-wow-duration="1s">
         <h1>Your Purchases</h1>
+        <ul>
+            <li>
+                <span class="item">McDonald's</span><span class="price">10</span>
+            </li>
+            <li>
+                <span class="item">Coffee</span><span class="price">5</span>
+            </li>
+            <li>
+                <span class="item">Taxi</span><span class="price">25</span>
+            </li>
+        </ul>
         <h2>You have <span class="pur-num">0</span> Purchases</h2>
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>

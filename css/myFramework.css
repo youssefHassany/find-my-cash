@@ -17,8 +17,11 @@
     --main: #fff;
     --secondary: #ccc;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .btn {
