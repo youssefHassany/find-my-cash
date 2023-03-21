@@ -19,16 +19,16 @@
         <!-- input name -->
         <div class="purchase-name-box">
             <label for="purchase-name">Purchase name: </label>
-            <input type="text" id="purchase-name">
+            <input type="text" id="purchase-name" required>
         </div>
 
         <!-- input price -->
         <div class="purchase-price-box">
             <label for="purchase-price">Purchase Price</label>
-            <input type="number" id="purchase-price">
+            <input type="number" id="purchase-price" required>
         </div>
 
-        <button class="btn">Confirm</button>
+        <button class="btn" id="confirm-purchase">Confirm</button>
     </div>
     <nav>
         <h1>Find My Cash</h1>
@@ -36,6 +36,7 @@
     </nav>
     <div class="menu">
         <a href="index.html">Home</a>
+        <a href="#">What is Find My Cash?</a>
         <a href="#">Analytics</a>
         <a href="#">Wanna use it offline?</a>
         <a href="https://github.com/youssefHassany/find-my-cash" target="_blank">GitHub</a>
@@ -46,13 +47,14 @@
             <label for="my-cash">Enter your money: </label>
             <input type="number" name="" id="my-cash">
         </div>
-        <input type="submit" value="Enter" class="btn">
+        <input type="submit" value="Set" class="btn">
+        <input type="submit" value="Add" class="btn">
     </div>
 
     <div class="purchases wow fadeInUp" data-wow-duration="1s">
         <h1>Your Purchases</h1>
         <ul>
-            <li>
+            <!-- <li>
                 <span class="item">McDonald's</span><span class="price">10</span>
             </li>
             <li>
@@ -60,13 +62,14 @@
             </li>
             <li>
                 <span class="item">Taxi</span><span class="price">25</span>
-            </li>
+            </li> -->
         </ul>
         <h2>You have <span class="pur-num">0</span> Purchases</h2>
-        <h3>Must have Cash: <span class="must-cash">100</span></h3>
+        <h3 style="margin-top: 30px;">Must have Cash: <span class="must-cash">0</span></h3>
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/style.js"></script>
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
