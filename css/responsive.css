@@ -2,6 +2,9 @@
     .start-cash {
         width: 80%;
     }
+    .btns {
+        margin: 10px;
+    }
 }
 
 @media (max-width: 355px) {

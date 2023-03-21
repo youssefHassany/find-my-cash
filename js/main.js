@@ -1,6 +1,7 @@
 let dataObj = {
   purchase: "name",
   price: 0,
+  Date: Date.now(),
 };
 
 var dataArr = [];
@@ -29,6 +30,7 @@ addPurchaseBtn.addEventListener("click", () => {
   purchaseInp.value = "";
   priceInp.value = "";
   addObjToArr(dataObj);
+  showCash(dataArr);
 });
 
 function addObjToArr(obj) {
@@ -61,3 +63,59 @@ function showData(arr) {
 }
 
 showData(dataArr);
+
+var originalCashInp = document.getElementById("my-cash");
+var addCashBtn = document.getElementById("add");
+var setCashBtn = document.getElementById("set");
+var clearCashBtn = document.getElementById("cls");
+
+if (localStorage.getItem("cash") === false) {
+  localStorage.setItem("cash", "0");
+}
+
+setCashBtn.addEventListener("click", function () {
+  localStorage.setItem("cash", originalCashInp.value);
+  originalCashInp.value = "";
+  showCash(dataArr);
+});
+
+addCashBtn.addEventListener("click", function () {
+  var newValue =
+    Number(originalCashInp.value) + Number(localStorage.getItem("cash"));
+  localStorage.setItem("cash", newValue);
+  originalCashInp.value = "";
+  showCash(dataArr);
+});
+
+clearCashBtn.addEventListener("click", function () {
+  localStorage.setItem("cash", "0");
+  originalCashInp.value = "";
+  showCash(dataArr);
+});
+
+originalCashInp.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+  }
+});
+
+function showCash(arr) {
+  let totalPrice = 0;
+  let before = document.getElementById("before");
+  before.innerHTML = localStorage.getItem("cash");
+
+  if (arr.length > 0) {
+    for (let i = 0; i < arr.length; i++) {
+      totalPrice += Number(arr[i].price);
+    }
+  }
+
+  let mustHaveCash = document.querySelector(".must-cash");
+  let mustHaveCashVal = Number(localStorage.getItem("cash")) - totalPrice;
+  mustHaveCash.innerHTML = mustHaveCashVal;
+
+  console.log(`Total Prices: ${totalPrice}`);
+  console.log(`Must Cash: ${mustHaveCashVal}`);
+}
+
+showCash(dataArr);

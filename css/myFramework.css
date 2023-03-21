@@ -17,6 +17,8 @@
     --tea: #c9f2c7;
     --main: #fff;
     --secondary: #ccc;
+    --red: #f44336;
+    --blue: #009688;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -40,8 +42,9 @@ input {
 }
 
 .btn {
-    padding: 10px 30px;
+    padding: 10px 25px;
     color: var(--main);
+    font-weight: 600;
     border: none;
     outline: none;
     border-radius: 4px;
@@ -80,6 +83,7 @@ input {
 .btn-outline:hover::before {
     width: 100%;
 }
+
 
 /* removing arrows from input numbers */
 

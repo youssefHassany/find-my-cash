@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="icon" href="imgs/market-research.png">
 </head>
 <body>
     <div class="add-btn">+<span class="add-msg">Add purchase</span></div>
@@ -47,12 +48,16 @@
             <label for="my-cash">Enter your money: </label>
             <input type="number" name="" id="my-cash">
         </div>
-        <input type="submit" value="Set" class="btn">
-        <input type="submit" value="Add" class="btn">
+        <div class="btns">
+            <input type="submit" value="Set" class="btn" id="set" style="background-color: var(--blue);">
+            <input type="submit" value="Add" class="btn" id="add">
+            <input type="submit" value="Clear" class="btn" id="cls" style="background-color: var(--red);">
+        </div>
     </div>
 
     <div class="purchases wow fadeInUp" data-wow-duration="1s">
         <h1>Your Purchases</h1>
+        <h3>Money before Purchasing: <span id="before"></span></h3>
         <ul>
             <!-- <li>
                 <span class="item">McDonald's</span><span class="price">10</span>
@@ -65,7 +70,7 @@
             </li> -->
         </ul>
         <h2>You have <span class="pur-num">0</span> Purchases</h2>
-        <h3 style="margin-top: 30px;">Must have Cash: <span class="must-cash">0</span></h3>
+        <h3 style="margin-top: 30px;">Must Have Money: <span class="must-cash">0</span></h3>
     </div>
 
     <script src="js/main.js"></script>
