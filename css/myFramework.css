@@ -7,6 +7,7 @@
 }
 ::selection {
     background-color: var(--green);
+    color: var(--main);
 }
 :root {
     --dark-green: #243119;
@@ -17,11 +18,25 @@
     --main: #fff;
     --secondary: #ccc;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--dark-green);
+    border-radius: 10px;
+}  
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green);
+}
+
 html {
     scroll-behavior: smooth;
 }
 body {
     overflow-x: hidden;
+}
+input {
+    outline: none;
 }
 
 .btn {
@@ -67,6 +82,7 @@ body {
 }
 
 /* removing arrows from input numbers */
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -74,7 +90,3 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  --moz-appearance: textfield;
-}

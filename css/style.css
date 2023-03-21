@@ -28,7 +28,7 @@ nav i {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    transition: all .3s;
+    transition: all .5s;
 }
 .menu a {
     width: fit-content;
@@ -126,4 +126,71 @@ input[type="number"] {
     margin: 10px;
     display: flex;
     justify-content: space-between;
+}
+.add-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+    font-size: 25px;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    transition: all .4s;
+}
+.add-msg {
+    display: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+.add-btn:hover {
+    width: 200px;
+    /* height: fit-content; */
+}
+.add-btn:hover .add-msg {
+    display: block;
+}
+
+.drop-menu {
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80dvw;
+    background-color: var(--main);
+    /* background-color: #ddd; */
+    padding: 20px;
+    height: 60dvh;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -2px #000;
+    transition: all .3s;
+}
+.show-drop-menu {
+    bottom: 0;
+}
+.close-drop-menu {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
 }

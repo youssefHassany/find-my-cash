@@ -12,6 +12,24 @@
     <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
+    <div class="add-btn">+<span class="add-msg">Add purchase</span></div>
+    <div class="drop-menu">
+        <div class="close-drop-menu">X</div>
+
+        <!-- input name -->
+        <div class="purchase-name-box">
+            <label for="purchase-name">Purchase name: </label>
+            <input type="text" id="purchase-name">
+        </div>
+
+        <!-- input price -->
+        <div class="purchase-price-box">
+            <label for="purchase-price">Purchase Price</label>
+            <input type="text" id="purchase-price">
+        </div>
+
+        <button class="btn">Confirm</button>
+    </div>
     <nav>
         <h1>Find My Cash</h1>
         <i class="fa fa-bars" aria-hidden="true"></i>
@@ -45,6 +63,7 @@
             </li>
         </ul>
         <h2>You have <span class="pur-num">0</span> Purchases</h2>
+        <h3>Must have Cash: <span class="must-cash">100</span></h3>
     </div>
 
     <script src="js/main.js"></script>
