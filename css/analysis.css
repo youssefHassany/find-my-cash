@@ -1,0 +1,30 @@
+.container {
+    width: 80%;
+    background-color: var(--secondary);
+    margin: 50px auto;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.container div {
+    box-sizing: border-box;
+    width: 350px;
+    height: 180px;
+    background-color: var(--main);
+    border-radius: 8px;
+    /* padding: 20px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#most-paid-price {
+    text-decoration: underline;
+}
+#most-paid-price, #most-paid-name {
+    color: var(--green);
+}
