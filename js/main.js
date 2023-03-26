@@ -31,6 +31,8 @@ addPurchaseBtn.addEventListener("click", () => {
   priceInp.value = "";
   addObjToArr(dataObj);
   showCash(dataArr);
+  var navMenu = document.querySelector(".menu");
+  navMenu.classList.remove("show-drop-menu");
 });
 
 function addObjToArr(obj) {
@@ -49,6 +51,7 @@ function showData(arr) {
     let purchaseLi = document.createElement("li");
     let nameSpan = document.createElement("span");
     let priceSpan = document.createElement("span");
+    purchaseLi.classList = "purchase";
     nameSpan.classList = "item";
     priceSpan.classList = "price";
     nameSpan.innerHTML = arr[i].purchase;
@@ -119,3 +122,49 @@ function showCash(arr) {
 }
 
 showCash(dataArr);
+// ----------------------------------
+// editing purchases made
+// ----------------------------------
+let allPurchases = document.querySelectorAll(".purchase"); // purchases list
+
+let customizePurchaseMenu = document.querySelector(".customize-purchase"); // customization menu
+let closeCustomize = document.querySelector(".close-customize-purchase"); // close button
+let purchaseBox = document.getElementById("p-name"); // purchase name input
+let priceBox = document.getElementById("p-price"); // purchase price input
+
+for (let i = 0; i < allPurchases.length; i++) {
+  allPurchases[i].addEventListener("click", () => {
+    // open customize menu
+    customizePurchaseMenu.classList.add("show-customize-purchase");
+
+    //print data on inputs
+    purchaseBox.value = dataArr[i].purchase;
+    priceBox.value = dataArr[i].price;
+
+    // removing a purchase
+    let deletePurchasesBtn = document.getElementById("del-purchase");
+    deletePurchasesBtn.addEventListener("click", () => {
+      dataArr.splice(i, 1);
+      showData(dataArr); // showing data function
+      localStorage.setItem("purchases", JSON.stringify(dataArr)); // changing data in local storage
+
+      customizePurchaseMenu.classList.remove("show-customize-purchase"); // closing the menu
+    });
+
+    // changing purchases data
+    let changePurchaseBtn = document.getElementById("change-pur-val");
+    changePurchaseBtn.addEventListener("click", () => {
+      dataArr[i].purchase = purchaseBox.value;
+      dataArr[i].price = priceBox.value;
+
+      showData(dataArr); // showing data function
+      customizePurchaseMenu.classList.remove("show-customize-purchase");
+      localStorage.setItem("purchases", JSON.stringify(dataArr)); // changing data in local storage
+    });
+  });
+}
+
+//close menu
+closeCustomize.addEventListener("click", () => {
+  customizePurchaseMenu.classList.remove("show-customize-purchase");
+});

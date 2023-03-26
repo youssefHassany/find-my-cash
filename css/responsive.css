@@ -5,6 +5,12 @@
     .btns {
         margin: 10px;
     }
+    .container {
+        width: 95%;
+    }
+    .menu {
+        width: 103dvw;
+    }
 }
 
 @media (max-width: 355px) {

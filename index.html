@@ -37,9 +37,9 @@
     </nav>
     <div class="menu">
         <a href="index.html">Home</a>
-        <a href="#">What is Find My Cash?</a>
+        <a href="about.html">What is Find My Cash?</a>
         <a href="#">Analytics</a>
-        <a href="#">Wanna use it offline?</a>
+        <a href="offline.html">Wanna use it offline?</a>
         <a href="https://github.com/youssefHassany/find-my-cash" target="_blank">GitHub</a>
     </div>
 
@@ -71,6 +71,22 @@
         </ul>
         <h2>You have <span class="pur-num">0</span> Purchases</h2>
         <h3 style="margin-top: 30px;">Must Have Money: <span class="must-cash">0</span></h3>
+    </div>
+
+    <div class="customize-purchase">
+        <div class="close-customize-purchase">X</div>
+        <div>
+            <label for="p-name">purchase Name</label>
+            <input type="text" id="p-name">
+        </div>
+        <div>
+            <label for="p-price">purchase Name</label>
+            <input type="number" id="p-price">
+        </div>
+        <div>
+            <input type="submit" value="Change" class="btn" id="change-pur-val">
+            <input type="submit" value="Delete" class="btn" id="del-purchase" style="background-color: var(--red);">
+        </div>
     </div>
 
     <script src="js/main.js"></script>
