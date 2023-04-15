@@ -29,19 +29,46 @@
 
     <!-- container of content -->
     <div class="container wow fadeInUp">
-        <div>
+        <!-- first card -->
+        <div class="card">
             <h2>Most Money Paid For:</h2>
             <h1>
                 <span id="most-paid-name"></span>
                 <span id="most-paid-price"></span>
             </h1>
         </div>
+
+        <!-- second card -->
+        <div class="card">
+            <h2>Total Paid Money:</h2>
+            <div style="display: flex; justify-content: space-between; gap: 20px;">
+                <h1>
+                    <span class="paid"></span><span class="total"></span>
+                </h1>
+                <div class="cash-percent">
+                    <span class="first-percentage"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- third card -->
+        <!-- <div class="card">
+            <h2>Total Paid Money:</h2>
+            <div style="display: flex; justify-content: space-between; gap: 20px;">
+                <h1>
+                    <span class="paid"></span><span class="total"></span>
+                </h1>
+                <div class="cash-percent">
+                    <span class="percentage"></span>
+                </div>
+            </div>
+        </div> -->
     </div>
 
 
     <script src="js/analysis.js"></script>
-    <script src="js/style.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/style.js"></script>
     <script>
         new WOW().init();
     </script>

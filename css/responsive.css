@@ -11,6 +11,9 @@
     .menu {
         width: 103dvw;
     }
+    .purchases {
+        width: 90%;
+    }
 }
 
 @media (max-width: 355px) {

@@ -31,7 +31,7 @@ addPurchaseBtn.addEventListener("click", () => {
   priceInp.value = "";
   addObjToArr(dataObj);
   showCash(dataArr);
-  var navMenu = document.querySelector(".menu");
+  var navMenu = document.querySelector(".drop-menu");
   navMenu.classList.remove("show-drop-menu");
 });
 
