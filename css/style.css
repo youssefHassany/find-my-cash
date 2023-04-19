@@ -68,7 +68,7 @@ input[type="number"] {
     box-sizing: border-box;
     width: 40%;
     margin: 40px auto;
-    padding: 20px;
+    padding: 20px 10px;
     border-radius: 4px;
     background-color: var(--secondary);
     display: flex;
