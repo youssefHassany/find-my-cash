@@ -10,7 +10,7 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 const PurchasesMenu = ({ nameInp, priceInp, handleNameInp, handlePriceInp, handleData, purchases, clearData, removePurchase, cash, remaining, calculateRemaining }) => {
   calculateRemaining(); // calling it to view data already
   return (
-    <section id="purchases-menu" className="w-3/4 md:w-1/2 mx-auto mt-8 bg-gray-300 dark:bg-gray-800 rounded p-5 flex justify-center flex-col">
+    <section id="purchases-menu" className="w-5/6 md:w-1/2 mx-auto mt-8 bg-gray-300 dark:bg-gray-800 rounded p-5 flex justify-center flex-col">
         <h1 className="text-3xl text-slate-700 dark:text-slate-300 font-medium mb-8">Your Purchases:-</h1>
         <ul id="purchases" className="w-full mx-auto p-3 overflow-x-scroll overflow-y-hidden h-44 flex flex-nowrap">
 
