@@ -7,15 +7,16 @@ import WalletForm from "./WalletForm";
 const Wallet = () => {
   const { totalSpending } = useContext(DataContext);
 
+  const walletFromStorage = localStorage.getItem("find-my-cash-wallet");
+
   const { wallet, setWallet } = useContext(DataContext);
   const [walletInpValue, setWalletInpValue] = useState("");
   const [formVisible, setFormVisible] = useState(false);
 
   useEffect(() => {
     // Update the wallet state when the local storage value changes
-    const walletFromStorage = localStorage.getItem("find-my-cash-wallet");
     setWallet((walletFromStorage && walletFromStorage - totalSpending) || 0);
-  }, [totalSpending]);
+  }, [totalSpending, walletFromStorage]);
 
   const handleSubmitWallet = (e) => {
     e.preventDefault();
@@ -34,7 +35,7 @@ const Wallet = () => {
   return (
     <section className="w-11/12 lg:w-1/2 mx-auto h-80 flex items-center justify-center">
       {/* circle */}
-      <div className="w-full h-full absolute top-0 left-0 -translate-y-1/2 rounded-full -z-10 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+      <div className="w-full h-full absolute top-0 left-0 -translate-y-3/4 md:-translate-y-1/2 rounded-full -z-10 bg-gradient-to-r from-green-500 to-emerald-500"></div>
 
       <div
         className={`p-8 bg-white border border-black rounded w-96 overflow-hidden mx-auto`}

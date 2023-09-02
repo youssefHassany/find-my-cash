@@ -10,6 +10,7 @@ import {
 import { CiCircleMore } from "react-icons/ci";
 import { IoMdSchool } from "react-icons/io";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 const Spendings = () => {
   const { data, setData, totalSpending } = useContext(DataContext);
@@ -43,41 +44,60 @@ const Spendings = () => {
   };
 
   return (
-    <ul className="w-full md:w-1/2 bg-gray-300 rounded p-4 mx-auto my-4">
-      {data.length > 0 ? (
-        data.map((item) => (
-          <li
-            key={item.id} // id is equal to Date.now()
-            className="p-2 w-full bg-white my-2 rounded flex justify-between items-center relative"
-          >
-            {/* delete task button */}
-            <button
-              onClick={() => removeSpending(item)}
-              className="absolute top-0 right-0 -translate-y-1"
+    <>
+      <ul className="w-full md:w-1/2 bg-gray-300 rounded p-4 mx-auto my-4">
+        {data.length > 0 ? (
+          data.map((item, index) => (
+            <motion.div
+              key={item.id}
+              className="w-7/8 bg-gray-200 shadow my-4 p-2 rounded"
+              transition={{ delay: 0.2 * index }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
             >
-              <AiFillCloseCircle />
-            </button>
+              <li
+                key={item.id} // id is equal to Date.now()
+                className="p-2 w-full bg-white my-2 rounded flex justify-between items-center relative"
+              >
+                {/* delete task button */}
+                <button
+                  onClick={() => removeSpending(item)}
+                  className="absolute top-0 right-0 -translate-y-1"
+                >
+                  <AiFillCloseCircle />
+                </button>
 
-            <span>
-              <p className="font-medium text-xl">
-                {item.title}: {item.price}
-              </p>
-              <p className="text-xs lg:text-sm text-gray-500">
-                {getFormattedDate(item.id)} {/* i want the date here */}
-              </p>
-            </span>
-            <span
-              title={item.category}
-              className="p-2 rounded bg-slate-800 text-white font-bold"
-            >
-              {icons[item.category]}
-            </span>
-          </li>
-        ))
-      ) : (
-        <p className="text-center text-xl font-bold p-4">No Spendings Yet...</p>
-      )}
-    </ul>
+                <span>
+                  <p className="font-medium text-xl">
+                    {item.title}: {item.price}
+                  </p>
+                  <p className="text-xs lg:text-sm text-gray-500">
+                    {getFormattedDate(item.id)} {/* i want the date here */}
+                  </p>
+                </span>
+                <span
+                  title={item.category}
+                  className="p-2 rounded bg-slate-800 text-white font-bold"
+                >
+                  {icons[item.category]}
+                </span>
+              </li>
+            </motion.div>
+          ))
+        ) : (
+          <p className="text-center text-xl font-bold p-4">
+            No Spendings Yet...
+          </p>
+        )}
+      </ul>
+
+      <div className="w-full md:w-1/2 bg-gray-300 rounded p-4 mx-auto my-4">
+        <p className="text-xl text-center font-bold underline">
+          Total Spending: {totalSpending}
+        </p>
+      </div>
+    </>
   );
 };
 

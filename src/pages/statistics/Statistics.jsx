@@ -43,7 +43,7 @@ const Statistics = () => {
   }, [data]);
 
   return (
-    <div className="container border mx-auto my-5 p-5 bg-gray-100">
+    <div className="container border mx-auto my-5 p-5 bg-gray-100 min-h-[85vh]">
       <h1 className="text-center text-3xl p-4">Statistics</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -102,8 +102,6 @@ const Statistics = () => {
             <Bar dataKey="title" fill="#059669" />
             <Bar dataKey="price" fill="#059669" />
           </BarChart>
-          {/* <ResponsiveContainer>
-          </ResponsiveContainer> */}
         </div>
       </div>
     </div>

@@ -47,7 +47,7 @@ const AddSpending = () => {
       action=""
       className="w-full md:w-1/2 mx-auto my-4 bg-gray-300 bg-opacity-70 shadow rounded-xl p-3 flex flex-col justify-center items-center gap-2"
     >
-      <div className="flex justify-center gap-2 flex-col lg:flex-row">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
         <input
           required
           className="mb-2 shadow-lg p-2 rounded border-black border"
