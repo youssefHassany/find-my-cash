@@ -1,63 +1,30 @@
-import React, { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../App";
-import BarChartComponent from "../../components/charts/BarChartComponent";
-import PieChartComponent from "../../components/charts/PieChartComponent";
+import React, { useState } from "react";
+import ItemsStats from "./ItemsStats";
+import CategorieStats from "./CategorieStats";
 
 const Statistics = () => {
-  const { data } = useContext(DataContext);
-  const [expensiveItem, setExpensiveItem] = useState(null);
-  const [transformedData, setTransformedData] = useState([]);
-
-  const transformData = () => {
-    const transformed = data.map((item) => ({
-      name: item.title,
-      value: item.price,
-    }));
-    setTransformedData(transformed);
-  };
-
-  const getExpensiveItem = () => {
-    if (data.length > 0) {
-      // Find the most expensive item
-      const mostExpensive = data.reduce((prev, current) =>
-        prev.price > current.price ? prev : current
-      );
-      setExpensiveItem(mostExpensive);
-    }
-  };
-
-  useEffect(() => {
-    getExpensiveItem();
-    transformData();
-  }, [data]);
-
+  const [showItemStats, setShowItemStats] = useState(true);
   return (
     <div className="container border mx-auto my-5 p-5 bg-gray-100 min-h-[85vh]">
       <h1 className="text-center text-3xl p-4">Statistics</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {/* card 1 */}
-        <div className="p-4 bg-white shadow-xl rounded-2xl flex flex-col items-center justify-center gap-3">
-          <h3 className="text-xl">Most Item Spent On:</h3>
-          {expensiveItem ? (
-            <p className="text-4xl text-center">
-              {expensiveItem.title}: {expensiveItem.price}
-            </p>
-          ) : (
-            <p>No data available</p>
-          )}
-        </div>
-
-        {/* pie chart */}
-        <div className="p-2 bg-white shadow-xl rounded-2xl">
-          <PieChartComponent pieData={transformedData} pieDataKey={"value"} />
-        </div>
-
-        {/* bar chart */}
-        <div className="p-2 bg-white shadow-xl rounded-2xl">
-          <BarChartComponent dataKeyOne={"title"} dataKeyTwo={"price"} />
-        </div>
+      {/* buttons container */}
+      <div className="my-4 flex justify-center gap-2">
+        <button
+          onClick={() => setShowItemStats(true)}
+          className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+        >
+          All Items
+        </button>
+        <button
+          onClick={() => setShowItemStats(false)}
+          className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+        >
+          Categories
+        </button>
       </div>
+
+      {showItemStats ? <ItemsStats /> : <CategorieStats />}
     </div>
   );
 };

@@ -83,7 +83,7 @@ const Spendings = () => {
                 >
                   <span>{icons[item.category]}</span>
                   {/* tooltip */}
-                  <span className="p-1 bg-gray-900 text-white text-sm absolute top-1/2 -translate-y-1/2 left-full opacity-0 rounded duration-100 group-hover:opacity-100 group-hover:translate-x-2">
+                  <span className="p-1 bg-gray-900 text-white text-xs md:text-sm absolute top-1/2 -trasnlate-y-full lg:-translate-y-1/2 left-full opacity-0 rounded duration-100 group-hover:opacity-100 group-hover:-translate-x-1/2 lg:group-hover:translate-x-2">
                     {item.category}
                   </span>
                 </span>

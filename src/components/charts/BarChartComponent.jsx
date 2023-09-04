@@ -11,14 +11,14 @@ import {
 } from "recharts";
 import { DataContext } from "../../App";
 
-const BarChartComponent = ({ dataKeyOne, dataKeyTwo }) => {
+const BarChartComponent = ({ dataKeyOne, dataKeyTwo, targetData }) => {
   const { data } = useContext(DataContext);
   return (
     <BarChart
       className="flex items-center justify-center"
       width={300}
       height={250}
-      data={data}
+      data={targetData}
       margin={{
         top: 5,
         right: 30,
