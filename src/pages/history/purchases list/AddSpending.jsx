@@ -24,7 +24,7 @@ const AddSpending = () => {
       category: selectedValue,
     };
 
-    let newData = [...data, updatedData];
+    let newData = [updatedData, ...data];
     setData(newData);
     setTitle("");
     setPrice("");

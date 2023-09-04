@@ -1,18 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  PieChart,
-  Pie,
-  Tooltip,
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
 import { DataContext } from "../../App";
+import BarChartComponent from "../../components/charts/BarChartComponent";
+import PieChartComponent from "../../components/charts/PieChartComponent";
 
 const Statistics = () => {
   const { data } = useContext(DataContext);
@@ -51,7 +40,7 @@ const Statistics = () => {
         <div className="p-4 bg-white shadow-xl rounded-2xl flex flex-col items-center justify-center gap-3">
           <h3 className="text-xl">Most Item Spent On:</h3>
           {expensiveItem ? (
-            <p className="text-4xl">
+            <p className="text-4xl text-center">
               {expensiveItem.title}: {expensiveItem.price}
             </p>
           ) : (
@@ -61,47 +50,12 @@ const Statistics = () => {
 
         {/* pie chart */}
         <div className="p-2 bg-white shadow-xl rounded-2xl">
-          {/* <h3 className="text-center text-2xl p-4">Analysis</h3> */}
-          <PieChart width={300} height={250} className="mx-auto">
-            <Pie
-              dataKey="value"
-              isAnimationActive={false}
-              data={transformedData}
-              cx="50%"
-              cy="50%"
-              outerRadius={80}
-              fill="#059669"
-              label
-            />
-            <Tooltip />
-          </PieChart>
-          {/* <ResponsiveContainer>
-          </ResponsiveContainer> */}
+          <PieChartComponent pieData={transformedData} pieDataKey={"value"} />
         </div>
 
         {/* bar chart */}
         <div className="p-2 bg-white shadow-xl rounded-2xl">
-          {/* <h3 className="text-center text-2xl p-4">Analysis</h3> */}
-          <BarChart
-            className="flex items-center justify-center"
-            width={300}
-            height={250}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="title" fill="#059669" />
-            <Bar dataKey="price" fill="#059669" />
-          </BarChart>
+          <BarChartComponent dataKeyOne={"title"} dataKeyTwo={"price"} />
         </div>
       </div>
     </div>
