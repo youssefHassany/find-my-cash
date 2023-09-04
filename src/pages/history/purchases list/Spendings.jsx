@@ -76,11 +76,16 @@ const Spendings = () => {
                     {getFormattedDate(item.id)} {/* i want the date here */}
                   </p>
                 </span>
+
                 <span
                   title={item.category}
-                  className="p-2 rounded bg-slate-800 text-white font-bold"
+                  className="p-2 rounded bg-slate-800 text-white font-bold group"
                 >
-                  {icons[item.category]}
+                  <span>{icons[item.category]}</span>
+                  {/* tooltip */}
+                  <span className="p-1 bg-gray-900 text-white text-sm absolute top-1/2 -translate-y-1/2 left-full opacity-0 rounded duration-100 group-hover:opacity-100 group-hover:translate-x-2">
+                    {item.category}
+                  </span>
                 </span>
               </li>
             </motion.div>
