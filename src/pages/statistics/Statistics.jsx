@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ItemsStats from "./ItemsStats";
-import CategorieStats from "./CategorieStats";
+import ItemsStats from "../../components/statistics components/ItemsStats";
+import CategorieStats from "../../components/statistics components/CategorieStats";
 
 const Statistics = () => {
   const [showItemStats, setShowItemStats] = useState(true);

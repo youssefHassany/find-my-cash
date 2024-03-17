@@ -1,16 +1,16 @@
 import React from "react";
 import AddSpending from "./AddSpending";
-import Spendings from "./Spendings";
+import SpendingsList from "./SpendingsList";
 
-const SpendingsList = () => {
+const Spendings = () => {
   return (
     <section>
       <h1 className="font-bold text-center text-2xl">Spendings</h1>
 
       <AddSpending />
-      <Spendings />
+      <SpendingsList />
     </section>
   );
 };
 
-export default SpendingsList;
+export default Spendings;

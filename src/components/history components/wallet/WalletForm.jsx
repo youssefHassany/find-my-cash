@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 
-const WalletForm = ({
-  handleSubmitWallet,
-  walletInpValue,
-  setWalletInpValue,
-  formVisible,
-  setFormVisible,
-}) => {
+const WalletForm = ({ formVisible, setFormVisible, setWallet }) => {
+  const [walletInpValue, setWalletInpValue] = useState("");
+
+  const handleSubmitWallet = (e) => {
+    e.preventDefault();
+
+    localStorage.setItem("find-my-cash-wallet", walletInpValue);
+    setWallet(walletInpValue);
+
+    setFormVisible(false);
+
+    Swal.fire("Done!", "Your current cash is submitted!", "success");
+  };
   return (
     <div
       className={`fixed w-screen h-screen top-0 left-0 z-30 bg-black bg-opacity-70 flex justify-center items-center ${

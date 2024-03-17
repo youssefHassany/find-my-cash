@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../App";
-import BarChartComponent from "../../components/charts/BarChartComponent";
-import PieChartComponent from "../../components/charts/PieChartComponent";
+import React, { useEffect, useState } from "react";
+import BarChartComponent from "../charts/BarChartComponent";
+import PieChartComponent from "../charts/PieChartComponent";
+import { useSelector } from "react-redux";
 
 const CategorieStats = () => {
-  const { data } = useContext(DataContext);
+  const data = useSelector((state) => state.totalPurchases.purchases);
   const [dataPerCategory, setDataPerCategory] = useState([]);
 
   const getDataPerCategory = () => {

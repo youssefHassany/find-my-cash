@@ -1,46 +1,14 @@
-import React, { useContext, useState, useEffect } from "react";
-import { DataContext } from "../../../App";
+import React from "react";
 
-const AddSpending = () => {
-  const {
-    dataObject,
-    data,
-    setData,
-    calculateTotalSpendings,
-    setTotalSpending,
-  } = useContext(DataContext);
-
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [selectedValue, setSelectedValue] = useState("others");
-
-  const addNewSpending = (e) => {
-    e.preventDefault();
-
-    const updatedData = {
-      ...dataObject,
-      title: title,
-      price: Number(price),
-      category: selectedValue,
-    };
-
-    let newData = [updatedData, ...data];
-    setData(newData);
-    setTitle("");
-    setPrice("");
-  };
-
-  useEffect(() => {
-    // This code will run whenever 'data' or 'calculateTotalSpendings' changes
-    localStorage.setItem("find-my-cash-data", JSON.stringify(data));
-    // Calculate total spendings without causing another useEffect invocation
-    const total = data.reduce(
-      (accumulator, item) => accumulator + item.price,
-      0
-    );
-    setTotalSpending(total);
-  }, [data, calculateTotalSpendings]);
-
+const SpendingForm = ({
+  addNewSpending,
+  title,
+  setTitle,
+  price,
+  setPrice,
+  selectedValue,
+  setSelectedValue,
+}) => {
   return (
     <form
       onSubmit={(e) => addNewSpending(e)}
@@ -93,4 +61,4 @@ const AddSpending = () => {
   );
 };
 
-export default AddSpending;
+export default SpendingForm;

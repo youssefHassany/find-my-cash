@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import {
   Tooltip,
   BarChart,
@@ -9,10 +8,11 @@ import {
   CartesianGrid,
   Legend,
 } from "recharts";
-import { DataContext } from "../../App";
+import { useSelector } from "react-redux";
 
 const BarChartComponent = ({ dataKeyOne, dataKeyTwo, targetData }) => {
-  const { data } = useContext(DataContext);
+  const data = useSelector((state) => state.totalPurchases.purchases);
+
   return (
     <BarChart
       className="flex items-center justify-center"

@@ -1,12 +1,12 @@
 import React from "react";
 import Wallet from "./wallet/Wallet";
-import SpendingsList from "./purchases list/SpendingsList";
+import Spendings from "../../components/history components/purchases list/Spendings";
 
 const History = () => {
   return (
     <div className="px-8">
       <Wallet />
-      <SpendingsList />
+      <Spendings />
     </div>
   );
 };
