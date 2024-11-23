@@ -3,8 +3,15 @@ import { Routes, Route } from "react-router-dom";
 import History from "./pages/history/History";
 import Statistics from "./pages/statistics/Statistics";
 import DownloadApp from "./pages/download/DownloadApp";
+import { useEffect } from "react";
 
 function App() {
+  const text = process.env.REACT_APP_TEXT;
+
+  useEffect(() => {
+    console.log(text);
+  }, [text]);
+
   return (
     <main className="max-w-screen min-h-screen overflow-x-hidden">
       <Header />

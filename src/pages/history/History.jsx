@@ -1,5 +1,5 @@
 import React from "react";
-import Wallet from "./wallet/Wallet";
+import Wallet from "../../components/history components/wallet/Wallet";
 import Spendings from "../../components/history components/purchases list/Spendings";
 
 const History = () => {
